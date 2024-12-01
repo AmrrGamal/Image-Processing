@@ -41,12 +41,10 @@ def find_peaks_and_sort_them(hist):
 
 
 def calculate_low_and_high_thresholds(peaks_indices):
-    if len(peaks_indices) >= 2:
-       peak1 = peaks_indices[0]
-       peak2 = peaks_indices[1]
-    else:
-        return None 
-    
+
+    peak1 = peaks_indices[0]
+    peak2 = peaks_indices[1]
+ 
     low_threshold = (peak1 + peak2) // 2
     high_threshold = peak2
 
