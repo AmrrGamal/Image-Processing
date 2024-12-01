@@ -8,6 +8,48 @@ from tkinter import messagebox
 import numpy as np
 from PIL import Image
 
+"""
+Step-by-step  of the function histogram_peak_threshold_segmentation:
+
+Step 1: Convert the image to grayscale if it is not already in 'L' mode (grayscale).
+This ensures that the image is in a single-channel format, suitable for histogram-based processing.
+"""
+
+"""
+Step 2: Convert the image to a numpy array with uint8 data type.
+This allows easy manipulation of pixel values for thresholding and segmentation.
+"""
+
+"""
+Step 3: Calculate the histogram of the image and the bin edges.
+The histogram will help us understand the distribution of pixel intensity values in the image.
+"""
+
+"""
+Step 4: Identify the peaks in the histogram and sort them.
+Peaks in the histogram indicate significant intensity values that can be used to define thresholds.
+"""
+
+"""
+Step 5: Determine the threshold values based on the number of peaks.
+If fewer than two peaks are found, default thresholds (0 and 255) are used for full image segmentation.
+Otherwise, calculate the thresholds from the peaks.
+"""
+
+"""
+Step 6: Create a blank segmented image with the same size as the original image.
+This image will hold the segmented result, with white pixels representing the segmented regions.
+"""
+
+"""
+Step 7: Apply the thresholds to the image.
+Pixels within the threshold range will be set to 255 (white), while others will remain 0 (black).
+"""
+
+"""
+Step 8: Return the segmented image as a PIL Image.
+The final segmented image is converted back to a PIL image format to be used or saved.
+"""
 
 
 def histogram_peak_threshold_segmentation(image):
