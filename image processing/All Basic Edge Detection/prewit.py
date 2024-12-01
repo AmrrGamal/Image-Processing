@@ -37,7 +37,7 @@ def prewit_operator(image):
 def display_prewit_result(master, original_image):
      if original_image:
         window = tk.Toplevel(master)
-        window.title("Kirsch Result")
+        window.title("Prewit Result")
         window.geometry("900x500")
         window.configure(bg="#f0f8ff")
         
