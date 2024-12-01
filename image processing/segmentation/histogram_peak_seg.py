@@ -33,17 +33,20 @@ def histogram_peak_threshold_segmentation(image):
 
 def find_peaks_and_sort_them(hist):
     peaks = find_peaks_from_histogram(hist, height=0)
-    if not peaks:
-        return []
-    
+    if len(peaks) == 0:
+        peaks = [0, len(hist) - 1] 
+
     sorted_peaks = sorted(peaks, key=lambda x: hist[x], reverse=True)
-    return sorted_peaks[:2] if len(sorted_peaks) >= 2 else sorted_peaks
+    return sorted_peaks
 
 
 def calculate_low_and_high_thresholds(peaks_indices):
-    peak1 = peaks_indices[0]
-    peak2 = peaks_indices[1]
-
+    if len(peaks_indices) >= 2:
+       peak1 = peaks_indices[0]
+       peak2 = peaks_indices[1]
+    else:
+        return None 
+    
     low_threshold = (peak1 + peak2) // 2
     high_threshold = peak2
 
