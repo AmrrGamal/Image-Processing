@@ -40,11 +40,8 @@ def find_peaks_and_sort_them(hist):
 
 
 def find_valley_point(sorted_peaks_indices, hist):
-    if len(sorted_peaks_indices) >= 2:
-        start, end = sorted_peaks_indices[0], sorted_peaks_indices[1]
-    else:
-        return None  
 
+    start, end = sorted_peaks_indices[0], sorted_peaks_indices[1] 
     min_valley = float('inf')
     valley_point = 0
     
